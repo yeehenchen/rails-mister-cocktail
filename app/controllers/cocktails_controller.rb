@@ -1,5 +1,5 @@
 class CocktailsController < ApplicationController
-  before_action :find_cocktail, only: [:show]
+  before_action :find_cocktail, only: [:show, :redirect]
 
   def index
     @cocktails = Cocktail.all
@@ -26,6 +26,10 @@ class CocktailsController < ApplicationController
     @keyword = params[:query]
     @cocktails = Cocktail.where("name LIKE '%#{@keyword}%'")
     redirect_to cocktails_path, notice: "You searched for #{@keyword}. No matched result found." if @cocktails.empty?
+  end
+
+  def redirect
+    redirect_to cocktail_path(@cocktail)
   end
 
   private

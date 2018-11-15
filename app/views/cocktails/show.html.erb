@@ -8,9 +8,7 @@
             <th scope="col">Dose No.</th>
             <th scope="col">Ingredient</th>
             <th scope="col">Description</th>
-            <th scope="col"><%= link_to(new_cocktail_dose_path(@cocktail)) do %>
-              <i class="fas fa-plus-circle">
-              <% end %></i></th>
+            <th scope="col"></th>
           </tr>
         </thead>
         <% @cocktail.doses.each_with_index do |d, i| %>
@@ -25,31 +23,7 @@
         <% end %>
       </table>
 
-      <% if !notice.nil? %>
-        <div class="errors-container">
-          <h3>Input warnings : </h3>
-          <ul class="list-unstyled">
-            <% notice.each do |message| %>
-              <li><%= message %></li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
-
-      <%= simple_form_for [@cocktail, @dose] do |f| %>
-
-        <h2>Add a new dose</h2>
-
-        <div class="form-group">
-          <%= f.input :description, class: "form-control" %>
-        </div>
-        <div class="form-group">
-          <%= f.association :ingredient, collection: Ingredient.order('name ASC') %>
-        </div>
-        <%= f.button :submit, class: "btn btn-primary" %>
-        <%= link_to "Clear input", "#", class: "btn btn-danger" %>
-      <% end %>
-
+      <%= render :partial => 'doses/new' %>
     </div>
   </div>
 </div>

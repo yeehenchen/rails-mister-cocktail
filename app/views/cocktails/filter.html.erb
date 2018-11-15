@@ -1,5 +1,5 @@
-
 <div class="container">
+
   <div class="row">
     <div class="col-12">
       <h1>Results</h1>
@@ -8,15 +8,17 @@
   </div>
 
   <div class="container">
-  <div class="row">
-    <% @cocktails.each do |c| %>
-      <div class="col-xs-12 col-sm-4">
-        <div class="card logo">
-          <div class="card-category"><%= c.name %></div>
-          <%= link_to '', cocktail_path(c), class: "card-link" %>
+    <div class="row">
+      <% @cocktails.each do |c| %>
+        <div class="col-xs-12 col-sm-4">
+          <div class="card logo">
+            <div class="card-category"><%= c.name %></div>
+            <%= link_to '', cocktail_path(c), class: "card-link" %>
+          </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
+
 </div>
 

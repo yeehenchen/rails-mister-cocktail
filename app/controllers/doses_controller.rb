@@ -8,8 +8,11 @@ class DosesController < ApplicationController
   def create
     @dose = Dose.new(dose_params)
     @dose.cocktail = @cocktail
-    @dose.save
-    redirect_to cocktail_path(@cocktail), notice: @dose.errors.full_messages
+    if @dose.save
+      redirect_to cocktail_path(@cocktail)
+    else
+      render 'cocktails/show'
+    end
   end
 
   def destroy
