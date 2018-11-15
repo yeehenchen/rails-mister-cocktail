@@ -13,8 +13,7 @@
       <h2>Add a new cocktail</h2>
 
       <div class="form-group">
-        <%= f.label :name %>
-        <%= f.text_field :name, class: "form-control" %>
+        <%= f.input :name, class: "form-control" %>
       </div>
       <%= f.button :submit, class: "btn btn-primary" %>
       <%= link_to "Clear input", "#", class: "btn btn-danger" %>

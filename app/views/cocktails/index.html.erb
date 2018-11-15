@@ -4,15 +4,11 @@
   <div class="row">
     <% @cocktails.each do |c| %>
       <div class="col-xs-12 col-sm-4">
-        <div class="card">
+        <div class="card logo">
           <div class="card-category"><%= c.name %></div>
+          <%= link_to '', cocktail_path(c), class: "card-link" %>
         </div>
       </div>
     <% end %>
-  </div>
-  <div class="row">
-    <div class="col-xs-12">
-      <%= link_to "Create a cocktail", new_cocktail_path, class: "btn btn-primary" %>
-    </div>
   </div>
 </div>
