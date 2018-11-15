@@ -8,7 +8,9 @@
             <th scope="col">Dose No.</th>
             <th scope="col">Ingredient</th>
             <th scope="col">Description</th>
-            <th scope="col"></th>
+            <th scope="col"><%= link_to(new_cocktail_dose_path(@cocktail)) do %>
+              <i class="fas fa-plus-circle">
+              <% end %></i></th>
           </tr>
         </thead>
       <% @cocktail.doses.each_with_index do |d, i| %>

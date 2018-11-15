@@ -1,7 +1,25 @@
-<h1>Add a new dose</h1>
-<%= simple_form_for [@cocktail, @dose] do |f| %>
-  <%= f.input :description %>
-  <%= f.association :ingredient, collection: Ingredient.order('name ASC') %>
-  <%= f.button :submit %>
-<% end %>
+<div class="col-xs-12 col-sm-4 col-sm-offset-4">
+  <div class="row">
+    <%= simple_form_for [@cocktail, @dose] do |f| %>
+      <% if @dose.errors.any? %>
+        <div class="errors-container">
+          <ul>
+            <% @dose.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <h2>Add a new dose</h2>
 
+      <div class="form-group">
+        <%= f.input :description, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.association :ingredient, collection: Ingredient.order('name ASC') %>
+      </div>
+      <%= f.button :submit, class: "btn btn-primary" %>
+      <%= link_to "Clear input", "#", class: "btn btn-danger" %>
+    <% end %>
+  </div>
+</div>
