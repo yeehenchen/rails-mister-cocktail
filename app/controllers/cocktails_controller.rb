@@ -21,6 +21,12 @@ class CocktailsController < ApplicationController
     end
   end
 
+  def filter
+    @keyword = params[:query]
+    @cocktails = Cocktail.where("name LIKE '%#{@keyword}%'")
+    redirect_to cocktails_path, notice: "You searched for #{@keyword}. No matched result found." if @cocktails.empty?
+  end
+
   private
 
   def find_cocktail

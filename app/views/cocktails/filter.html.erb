@@ -1,0 +1,22 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1>Results</h1>
+      <p>You searched for <strong><%= @keyword %></strong>. We found <%= @cocktails.count %> out of our <%= Cocktail.count %> cocktail on our website.</p>
+    </div>
+  </div>
+
+  <div class="container">
+  <div class="row">
+    <% @cocktails.each do |c| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card logo">
+          <div class="card-category"><%= c.name %></div>
+          <%= link_to '', cocktail_path(c), class: "card-link" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
