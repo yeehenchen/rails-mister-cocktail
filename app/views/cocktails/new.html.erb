@@ -5,6 +5,8 @@
 
       <div class="form-group">
         <%= f.input :name, class: "form-control" %>
+        <%= f.input :photo %>
+        <%= f.input :photo_cache, as: :hidden %>
       </div>
       <%= f.button :submit, class: "btn btn-primary" %>
       <%= link_to "Clear input", "#", class: "btn btn-danger" %>
