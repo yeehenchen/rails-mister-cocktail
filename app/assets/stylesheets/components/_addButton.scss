@@ -3,9 +3,15 @@
   right: 20px;
   bottom: 20px;
   font-size: 50px;
+  line-height: 50px;
   color: #A2D8F4;
   display: none;
+  z-index: 3;
 }
+
+// .glyphicon {
+//   top:
+// }
 
 @media (max-width: 850px) {
   .fa-plus-circle {

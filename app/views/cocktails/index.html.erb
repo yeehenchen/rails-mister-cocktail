@@ -5,14 +5,16 @@
   </div>
 <% end %>
 
-<%= render 'layouts/banner' %>
+<div class="banner-container">
+  <%= render 'layouts/navbar' %>
+  <%= render 'layouts/banner' %>
+</div>
 
 <div class="row">
   <h1 class="text-center">Cocktails</h1>
 </div>
 
 <div class="container">
-
   <div class="row">
     <% @cocktails.each do |c| %>
       <div class="col-xs-12 col-sm-4">
@@ -31,7 +33,7 @@
     <% end %>
   </div>
   <a href="/cocktails/new"><i class="fas fa-plus-circle"></i></a>
+  </div>
 </div>
-
 
 
