@@ -1,11 +1,12 @@
-<%= render 'layouts/banner' %>
-
 <% if notice %>
-  <div class="alert alert-warning" role="alert">
-    <button type="button" class="close"id="alertbtn">×</button>
+  <div class="alert alert-warning alert-dismissible" role="alert">
+    <button type="button" class="close" id="alertbtn" data-dismiss="alert">×</button>
     <p><%= notice %></p>
   </div>
 <% end %>
+
+<%= render 'layouts/banner' %>
+
 <div class="row">
   <h1 class="text-center">Cocktails</h1>
 </div>
