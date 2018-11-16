@@ -8,7 +8,7 @@ gem 'dotenv-rails', groups: [:development, :test]
 
 # cloudinary
 gem 'cloudinary'
-
+gem 'rest-client', '>= 2.0'
 # carrierwave
 gem 'carrierwave', '~> 1.2'
 
