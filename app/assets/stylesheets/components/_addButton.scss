@@ -1,0 +1,14 @@
+.fa-plus-circle {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  font-size: 50px;
+  color: #A2D8F4;
+  display: none;
+}
+
+@media (max-width: 850px) {
+  .fa-plus-circle {
+  display: inline;
+  }
+}
